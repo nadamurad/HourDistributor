@@ -30,7 +30,7 @@ public class EmployeeHours implements Comparable<EmployeeHours>{
     //will sort list by hours
     public int compareTo(EmployeeHours h){
         if(this.hours>h.getHours()){
-            return 0;
+            return 1;
             //return 1 if greater than
         }
         if(this.hours<h.getHours()){
