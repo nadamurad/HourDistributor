@@ -111,15 +111,24 @@ public class EmployeeHours implements Comparable<EmployeeHours>{
     public static int[] getTimeAvailable(String time,EmployeeHours e){
         //takes user input 'time' that will split into an array
         String[] hrs = time.split(" ");
-        int j =0;
         int [] hours = new int[2];
         //take numbers from array, should be 2 numbers that will be placed in array 'hours'
-        for (int i = 0;i<hrs.length;i++){
-            if (hrs[i].contains("1")||hrs[i].contains("2")||hrs[i].contains("3")||hrs[i].contains("4")||hrs[i].contains("5")||hrs[i].contains("6")||hrs[i].contains("7")||hrs[i].contains("8")||hrs[i].contains("9")||hrs[i].contains("10")||hrs[i].contains("11")||hrs[i].contains("12")){
-                hours[j] = i;
-                j++;
+        String s = "1";
+//        for (int i = 0;i<hrs.length;i++){
+//            if (hrs[i].contains(k)||hrs[i].contains("2")||hrs[i].contains("3")||hrs[i].contains("4")||hrs[i].contains("5")||hrs[i].contains("6")||hrs[i].contains("7")||hrs[i].contains("8")||hrs[i].contains("9")||hrs[i].contains("10")||hrs[i].contains("11")||hrs[i].contains("12")){
+//                hours[j] = i;
+//                j++;
+//            }
+//        }
+        //put into array
+        int i = 0;
+        for (int j=0;j<hrs.length;j++){
+            if(hrs[i].contains(s)){
+                hours[j]=Integer.parseInt(s);
             }
+            s=Integer.toString(Integer.parseInt(s)+1);
         }
+
         //make difference in hours positive if negative
         //count difference in hours
         int hr1=hours[1];
@@ -139,15 +148,15 @@ public class EmployeeHours implements Comparable<EmployeeHours>{
         //populating array with hours
         //all hours
         if(hours[1]>hours[0]){
-            for (int i = hours[0]; i<= hours[1]&& i<12;i++){
-                fromTo[k]=i;
+            for (int f = hours[0]; f<= hours[1]&& f<12;f++){
+                fromTo[k]=f;
                 k++;
             }
         }
         int l = 0;
         if(hours[0]>hours[1]){
-            for (int i = hours[0]; i<= (hours[1]+12);i++){
-                fromTo[l]=i;
+            for (int f = hours[0]; f<= (hours[1]+12);f++){
+                fromTo[l]=f;
                 if(fromTo[l]>12){
                     fromTo[l]=fromTo[l]-12;
                 }
