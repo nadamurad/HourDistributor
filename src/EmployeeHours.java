@@ -40,10 +40,10 @@ public class EmployeeHours implements Comparable<EmployeeHours>{
         else return 0;
         //return 0 if equal
     }
-    //overridden toString displays first name last name and hours
-//    public String toString(){
-//        return String.format("\b\b%16s : \t%3d\n",(getFirstName()+ " " + getLastName()),getHours());
-//    }
+//    //overridden toString displays first name last name and hours
+////    public String toString(){
+////        return String.format("\b\b%16s : \t%3d\n",(getFirstName()+ " " + getLastName()),getHours());
+////    }
     public static void printMap(EmployeeHours e){
         for (String day: hoursAvailable.keySet()){
             String key = day.toString();
@@ -69,6 +69,7 @@ public class EmployeeHours implements Comparable<EmployeeHours>{
             String av = input.next();
             int [] fromTo = getTimeAvailable(av,e);
             hoursAvailable.put("Tuesday",fromTo);
+
         }
         //wednesday
         if(days.contains("wednesday")||days.contains("Wednesday")){
@@ -113,7 +114,7 @@ public class EmployeeHours implements Comparable<EmployeeHours>{
         String[] hrs = time.split(" ");
         int [] hours = new int[2];
         //take numbers from array, should be 2 numbers that will be placed in array 'hours'
-        String s = "1";
+        String s = time;
 //        for (int i = 0;i<hrs.length;i++){
 //            if (hrs[i].contains(k)||hrs[i].contains("2")||hrs[i].contains("3")||hrs[i].contains("4")||hrs[i].contains("5")||hrs[i].contains("6")||hrs[i].contains("7")||hrs[i].contains("8")||hrs[i].contains("9")||hrs[i].contains("10")||hrs[i].contains("11")||hrs[i].contains("12")){
 //                hours[j] = i;
